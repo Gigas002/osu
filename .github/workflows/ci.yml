@@ -4,6 +4,8 @@ name: Continuous Integration
 jobs:
 
   build-only-ios:
+    env:
+      Wap_Project_Directory: osu.iOS
     name: Build only (iOS)
     runs-on: macos-latest
     steps:
@@ -19,4 +21,10 @@ jobs:
       # cannot accept .sln(f) files as arguments.
       # Build just the main game for now.
       - name: Build
-        run: msbuild osu.iOS/osu.iOS.csproj /restore /p:Configuration=Debug
+        run: msbuild osu.iOS/osu.iOS.csproj /restore /p:Configuration=Release
+        
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: ipa
+          path: ${{ env.Wap_Project_Directory }}\ipa
