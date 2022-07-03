@@ -22,9 +22,7 @@ jobs:
       # Build just the main game for now.
       - name: Build
         run: |
-             dotnet build osu.iOS.slnf
-             dotnet build osu.iOS/osu.iOS.csproj
-             dotnet publish "osu.iOS/osu.iOS.csproj" -c Release /p:PublishDir=osu.iOS/publish
+             msbuild osu.iOS/osu.iOS.csproj /restore /p:Configuration=Release /p:Platform="iPhone" /p:IpaPackageDir="osu.iOS/publish"
         
       - name: Find build artifacts
         run: find -f osu.iOS/
