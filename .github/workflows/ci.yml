@@ -21,7 +21,7 @@ jobs:
       # cannot accept .sln(f) files as arguments.
       # Build just the main game for now.
       - name: Build
-        run: msbuild osu.iOS.slnf
+        run: dotnet build osu.iOS.slnf
         
       - name: Find build artifacts
         run: find -f osu.iOS/
