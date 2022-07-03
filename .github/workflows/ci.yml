@@ -24,7 +24,7 @@ jobs:
       #  run: msbuild osu.iOS/osu.iOS.csproj /restore /p:Configuration=Release
         
       - name: Find build artifacts
-        run: find -f
+        run: find -f osu.iOS/
         
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3.1.0
