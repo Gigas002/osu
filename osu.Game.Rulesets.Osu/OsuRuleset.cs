@@ -32,6 +32,7 @@ using osu.Game.Skinning;
 using System;
 using System.Linq;
 using osu.Framework.Extensions.EnumExtensions;
+using osu.Framework.Localisation;
 using osu.Game.Rulesets.Osu.Edit.Setup;
 using osu.Game.Rulesets.Osu.Objects;
 using osu.Game.Rulesets.Osu.Skinning.Legacy;
@@ -172,7 +173,7 @@ namespace osu.Game.Rulesets.Osu
                         new OsuModClassic(),
                         new OsuModRandom(),
                         new OsuModMirror(),
-                        new OsuModAlternate(),
+                        new MultiMod(new OsuModAlternate(), new OsuModSingleTap())
                     };
 
                 case ModType.Automation:
@@ -197,7 +198,7 @@ namespace osu.Game.Rulesets.Osu
                         new OsuModApproachDifferent(),
                         new OsuModMuted(),
                         new OsuModNoScope(),
-                        new OsuModMagnetised(),
+                        new MultiMod(new OsuModMagnetised(), new OsuModRepel()),
                         new ModAdaptiveSpeed()
                     };
 
@@ -253,7 +254,7 @@ namespace osu.Game.Rulesets.Osu
             };
         }
 
-        public override string GetDisplayNameForHitResult(HitResult result)
+        public override LocalisableString GetDisplayNameForHitResult(HitResult result)
         {
             switch (result)
             {
