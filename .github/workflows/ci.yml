@@ -22,13 +22,16 @@ jobs:
       # Build just the main game for now.
       - name: Build
         run: |
-             msbuild osu.iOS/osu.iOS.csproj /restore /p:Configuration=Release /p:Platform=iPhoneSimulator /p:IpaPackageDir="osu.iOS/publish"
-        
-      - name: Find build artifacts
-        run: find -f osu.iOS/bin
+             msbuild osu.iOS/osu.iOS.csproj /restore /p:Configuration=Release /p:Platform=iPhoneSimulator
+             
+      - name: Create ipa
+        run: |
+             mkdir build && mkdir build/Payload
+             mv osu.iOS/bin/iPhoneSimulator/Release/osu.iOS.app build/Payload/osu.iOS.app
+             7z a build/osu.ipa build/Payload
         
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3.1.0
         with:
           name: ipa
-          path: ${{ env.Wap_Project_Directory }}\ipa
+          path: 'build/osu.ipa'
