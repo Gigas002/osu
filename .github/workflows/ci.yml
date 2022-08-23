@@ -10,7 +10,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.4.2
+        uses: actions/checkout@v3.0.2
 
       - name: Install .NET 6.0.x
         uses: actions/setup-dotnet@v2.1.0
@@ -25,7 +25,7 @@ jobs:
              msbuild osu.iOS/osu.iOS.csproj /restore /p:Configuration=Release /p:Platform=iPhoneSimulator /p:IpaPackageDir="osu.iOS/publish"
         
       - name: Find build artifacts
-        run: find -f osu.iOS/
+        run: find -f osu.iOS/bin
         
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3.1.0
