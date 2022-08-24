@@ -27,7 +27,7 @@ jobs:
       - name: Create ipa
         run: |
              mkdir build && mkdir build/Payload
-             mv osu.iOS/bin/iPhoneSimulator/Release/osu.iOS.app build/Payload/osu.iOS.app
+             mv osu.iOS/bin/iPhoneSimulator/Release/osu.iOS.app build/Payload/osu.app
              7z a build/osu.ipa build/Payload
         
       - name: Upload build artifacts
