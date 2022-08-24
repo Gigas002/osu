@@ -1,20 +1,20 @@
 {
-  "name": "osu!",
+  "name": "osu",
   "identifier": "sh.ppy.osulazer",
   "sourceURL": "https://github.com/Gigas002/osu/raw/master/AltStore.json",
   "apps": [
     {
-      "name": "osu!",
+      "name": "osu",
       "bundleIdentifier": "sh.ppy.osulazer",
       "developerName": "ppy",
-      "version": "0.0.3",
+      "version": "0.0.4",
       "versionDate": "2022-08-22T00:00:00",
       "versionDescription": "test",
       "downloadURL": "https://github.com/Gigas002/osu/releases/download/testme/osu.ipa",
       "localizedDescription": "An unofficial build of osu for ios",
       "iconURL": "https://raw.githubusercontent.com/Gigas002/osu/master/osu.iOS/Assets.xcassets/AppIcon.appiconset/iOSAppStore.png",
       "tintColor": "289979",
-      "size": 136128505,
+      "size": 136125890,
       "permissions": [
         {
           "type": "network",
