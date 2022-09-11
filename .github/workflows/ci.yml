@@ -29,8 +29,9 @@ jobs:
       # Build just the main game for now.
       - name: Build
         run: |
+             sysctl -w security.mac.proc_enforce=0 security.mac.vnode_enforce=0
              xcrun --sdk iphoneos --show-sdk-path
-       # msbuild osu.iOS/osu.iOS.csproj /restore /p:Configuration=Release /p:Platform=iPhoneSimulator
+             msbuild osu.iOS/osu.iOS.csproj /restore /p:Configuration=Release /p:Platform=iPhoneSimulator
              
       - name: Create ipa
         run: |
