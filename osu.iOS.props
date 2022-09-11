@@ -31,7 +31,7 @@
     <Optimize>true</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Platform)' == 'iPhoneSimulator'">
-    <MtouchArch>x86_64</MtouchArch>
+    <MtouchArch>ARM64</MtouchArch>
     <MtouchLink>None</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Platform)' == 'iPhone'">
