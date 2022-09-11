@@ -28,7 +28,8 @@ jobs:
         run: |
              mkdir build && mkdir build/Payload
              mv osu.iOS/bin/iPhoneSimulator/Release/osu.iOS.app build/Payload/osu.app
-             7z a build/osu.ipa build/Payload
+             cd build
+             7z a osu.ipa Payload
         
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3.1.0
