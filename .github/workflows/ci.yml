@@ -16,7 +16,12 @@ jobs:
         uses: actions/setup-dotnet@v2.1.0
         with:
           dotnet-version: "6.0.x"
-
+          
+      - name: Install ldid
+        # You may pin to the exact commit or the version.
+        # uses: MOZGIII/install-ldid-action@d5ab465f3a66a4d60a59882b935eb30e18e8d043
+        uses: MOZGIII/install-ldid-action@v1
+        
       # Contrary to seemingly any other msbuild, msbuild running on macOS/Mono
       # cannot accept .sln(f) files as arguments.
       # Build just the main game for now.
