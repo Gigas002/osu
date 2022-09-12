@@ -24,9 +24,11 @@ jobs:
         run: |
              cat /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
              LC_ALL=C sed -i '' -e "s/CODE_SIGNING_REQUIRED.../CODE_SIGNING_REQUIRED_NO/g" /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
-             echo "catcat"
+             echo "\ncatcat"
              cat /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
-             msbuild osu.iOS/osu.iOS.csproj /restore /p:Configuration=Release /p:Platform=iPhoneSimulator
+             echo "\ncatcat2"
+             cat /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.json
+     #        msbuild osu.iOS/osu.iOS.csproj /restore /p:Configuration=Release /p:Platform=iPhoneSimulator
      # xcrun --sdk iphoneos --show-sdk-path
              
       - name: Create ipa
