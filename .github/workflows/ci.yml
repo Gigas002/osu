@@ -22,7 +22,7 @@ jobs:
       # Build just the main game for now.
       - name: Build
         run: |
-             plutil -convert binary1 /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
+             plutil -convert xml1 /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
              cat /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
       #       plutil -replace CODE_SIGNING_REQUIRED -string "NO" /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
        #      plutil -replace ENTITLEMENTS_REQUIRED -string "NO" /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
