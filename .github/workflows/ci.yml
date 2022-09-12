@@ -30,8 +30,8 @@ jobs:
       - name: Build
         run: |
              cat /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
-             sed -e 's/CODE_SIGNING_REQUIRED/CODE_SIGNING_REQUIRED_NO/g' /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
-             echp "catcat"
+             LANG=C sed -e 's/CODE_SIGNING_REQUIRED/CODE_SIGNING_REQUIRED_NO/g' /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
+             echo "catcat"
              cat /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
       #       ls -a /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk
       #       echo "Ent:"
