@@ -36,7 +36,6 @@ jobs:
              cat /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.json
              echo "SDKSettings.plist:"
              cat /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
-             rm /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
              xcrun --sdk iphoneos --show-sdk-path
       #       msbuild osu.iOS/osu.iOS.csproj /restore /p:Configuration=Release /p:Platform=iPhoneSimulator
              
@@ -51,4 +50,5 @@ jobs:
         uses: actions/upload-artifact@v3.1.0
         with:
           name: ipa
-          path: 'build/osu.ipa'
+          path: '/Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist'
+          #path: 'build/osu.ipa'
