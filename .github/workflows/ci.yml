@@ -27,7 +27,7 @@ jobs:
              LC_ALL=C sed -i '' -e "s/ENTITLEMENTS_REQUIRED.../ENTITLEMENTS_REQUIRED_NO/g" /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
              echo "catcat"
              cat /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
-             msbuild osu.iOS/osu.iOS.csproj /restore /p:Configuration=Release /p:Platform=iPhoneSimulator
+             msbuild osu.iOS/osu.iOS.csproj /restore /p:Configuration=Release /p:Platform=iPhone
              
       - name: Create ipa
         run: |
