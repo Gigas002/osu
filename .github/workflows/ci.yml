@@ -16,13 +16,6 @@ jobs:
         uses: actions/setup-dotnet@v2.1.0
         with:
           dotnet-version: "6.0.x"
-          
-      - name: Install ldid
-        # You may pin to the exact commit or the version.
-        # uses: MOZGIII/install-ldid-action@d5ab465f3a66a4d60a59882b935eb30e18e8d043
-        uses: MOZGIII/install-ldid-action@v1
-        with:
-          tag: v2.1.5-procursus5
         
       # Contrary to seemingly any other msbuild, msbuild running on macOS/Mono
       # cannot accept .sln(f) files as arguments.
@@ -30,16 +23,10 @@ jobs:
       - name: Build
         run: |
              cat /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
-             LC_ALL=C sed -i '' -e "s/CODE_SIGNING_REQUIRED/CODE_SIGNING_REQUIRED_NO/g" /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
+             LC_ALL=C sed -i '' -e "s/CODE_SIGNING_REQUIRED.../CODE_SIGNING_REQUIRED_NO/g" /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
              echo "catcat"
              cat /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
              msbuild osu.iOS/osu.iOS.csproj /restore /p:Configuration=Release /p:Platform=iPhoneSimulator
-
-      #       ls -a /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk
-      #       echo "Ent:"
-      #      cat /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/Entitlements.plist
-      #       echo "SDKSettings.json:"
-      #       cat /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.json
      # xcrun --sdk iphoneos --show-sdk-path
              
       - name: Create ipa
