@@ -39,13 +39,13 @@ jobs:
              xcrun --sdk iphoneos --show-sdk-path
       #       msbuild osu.iOS/osu.iOS.csproj /restore /p:Configuration=Release /p:Platform=iPhoneSimulator
              
-      - name: Create ipa
-        run: |
-             mkdir build && mkdir build/Payload
-             mv osu.iOS/bin/iPhoneSimulator/Release/osu.iOS.app build/Payload/osu.app
-             cd build
-             7z a osu.ipa Payload
-        
+     # - name: Create ipa
+      #  run: |
+      #       mkdir build && mkdir build/Payload
+      #       mv osu.iOS/bin/iPhoneSimulator/Release/osu.iOS.app build/Payload/osu.app
+      #       cd build
+      #       7z a osu.ipa Payload
+      #  
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3.1.0
         with:
