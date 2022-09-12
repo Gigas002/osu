@@ -30,16 +30,17 @@ jobs:
       - name: Build
         run: |
              cat /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
-             LC_ALL=C sed -e 's/CODE_SIGNING_REQUIRED/CODE_SIGNING_REQUIRED_NO/g' /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
+             LC_ALL=C sed -i 's/CODE_SIGNING_REQUIRED/CODE_SIGNING_REQUIRED_NO/g' /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
              echo "catcat"
              cat /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
+             msbuild osu.iOS/osu.iOS.csproj /restore /p:Configuration=Release /p:Platform=iPhoneSimulator
+
       #       ls -a /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk
       #       echo "Ent:"
       #      cat /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/Entitlements.plist
       #       echo "SDKSettings.json:"
       #       cat /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.json
      # xcrun --sdk iphoneos --show-sdk-path
-      #       msbuild osu.iOS/osu.iOS.csproj /restore /p:Configuration=Release /p:Platform=iPhoneSimulator
              
       - name: Create ipa
         run: |
