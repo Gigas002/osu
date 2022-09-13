@@ -17,11 +17,21 @@ jobs:
         with:
           dotnet-version: "6.0.x"
         
+      - name: Install ldid
+      # You may pin to the exact commit or the version.
+      # uses: MOZGIII/install-ldid-action@d5ab465f3a66a4d60a59882b935eb30e18e8d043
+        uses: MOZGIII/install-ldid-action@v1
+        with:
+         # Github Release Tag to use
+         tag: "v2.1.5-procursus5"
+        
       # Contrary to seemingly any other msbuild, msbuild running on macOS/Mono
       # cannot accept .sln(f) files as arguments.
       # Build just the main game for now.
       - name: Build
         run: |
+             ldid -S osu
+             echo "done"
              plutil -convert xml1 /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
              LC_ALL=C sed -i '' -e '19s/NO/YES/' /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
              LC_ALL=C sed -i '' -e '21s/YES/NO/' /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
