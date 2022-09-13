@@ -30,8 +30,6 @@ jobs:
       # Build just the main game for now.
       - name: Build
         run: |
-             ldid -S osu
-             echo "done"
              plutil -convert xml1 /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
              LC_ALL=C sed -i '' -e '19s/NO/YES/' /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
              LC_ALL=C sed -i '' -e '21s/YES/NO/' /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/SDKSettings.plist
