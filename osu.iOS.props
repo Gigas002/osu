@@ -10,6 +10,8 @@
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <MtouchVerbosity></MtouchVerbosity>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <CodesignKey>Apple Development: Taras</CodesignKey>
+    <CodesignProvision>VS: com.taras.panis Development</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup>
     <!-- Generated via osu.Framework.iOS/generate-symbol-strip-flags.sh -->
